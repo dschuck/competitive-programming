@@ -1,6 +1,4 @@
 <?php 
-ini_set('memory_limit', '1024M');
-
 // Grab file
 //$input = file_get_contents('example-input.txt');
 $input = file_get_contents('input.txt');
