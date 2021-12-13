@@ -88,9 +88,7 @@ foreach ($cardsArray as $card) {
 foreach ($drawArray as $draw) {
     $cardNum = 0;
     // as long has no card has bingo yet
-    // this $bingo variable is the only thing that differs from the solution to part2. 
-    // without it, the program draws numbers until the last board (i.e. the squid) wins
-    if (!$bingo) {
+    
         // loop through the cards
         foreach ($bingoArray as $card) {
             $winner = false;
@@ -116,9 +114,6 @@ foreach ($drawArray as $draw) {
 
                         // when there are no numbers left == win!
                         if (!$cellsLeft) {
-                            // this $bingo variable is the only thing that differs from the solution to part2. 
-                            // without it, the program draws numbers until the last board (i.e. the squid) wins
-                            $bingo = true;
                             // execute function from above to calculate the sum of left over numbers in card
                             $answer = calcAnswer($draw, $cardNum, $bingoArray);
                             array_push($winnerArray, $cardNum);
@@ -142,9 +137,6 @@ foreach ($drawArray as $draw) {
 
                         // when there are no numbers left == win!
                         if (!$cellsLeft) {
-                            // this $bingo variable is the only thing that differs from the solution to part2. 
-                            // without it, the program draws numbers until the last board (i.e. the squid) wins
-                            $bingo = true;
                             // execute function from above to calculate the sum of left over numbers in card
                             $answer = calcAnswer($draw, $cardNum, $bingoArray);
                             array_push($winnerArray, $cardNum);
@@ -155,11 +147,11 @@ foreach ($drawArray as $draw) {
             }
             $cardNum++;
         }
-    }
+    
 }
 
 
 // Grab answer file and write final value
-$output = 'part1-answer.txt';
+$output = 'part2-answer.txt';
 file_put_contents($output, $answer);
 ?>
